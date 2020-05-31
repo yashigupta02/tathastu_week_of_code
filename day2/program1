@@ -1,0 +1,51 @@
+def even(x):
+    if x % 2 == 0 :
+       return True
+    else:
+        return False
+
+def palindrome(x):
+    N = str(x)
+    L = len(N)
+    for i in range(L // 2):
+        if N[i] != N[L - 1 - i]:
+            return False
+        else:
+            return True
+
+def prime(x):
+    a = 2
+    k = x // 2
+    while k >= a:
+        if x % 2 == 0:
+            return False
+        a += 1
+        k = x // a
+    return True
+
+def armstrong(x):
+    sum = 0
+    temp = x
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** 3
+        temp //= 10
+    if x == sum:
+        return True
+    else:
+        return False
+
+def check():
+    x = int(input("enter a number:"))
+    if(even(x)):
+        print(x,"is an even number")
+    else:
+        print(x,"is a odd number")
+    if(palindrome(x)):
+        print(x, "is a palindrome number")
+    if(prime(x)):
+        print(x, "is a prime number")
+    if(armstrong(x)):
+        print(x, "is an armstrong number")
+
+check()
